@@ -17,11 +17,9 @@ public class RovertDaoImpl implements RovertDao {
 
 	private List<Action> movements;
 
-	@PostConstruct
-	public void init() {
+	public RovertDaoImpl() {
 		this.movements = new ArrayList<>();
 	}
-
 
 	@Override
 	public void move(Direction direction) {

@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.exercise.exception.TransactionException;
+import com.exercise.exception.RovertException;
 import com.exercise.service.RovertService;
 import com.exercise.web.response.RovertResponse;
 
@@ -26,10 +26,10 @@ public class RovertResource {
 
     /**
      * POST  /move/{direction} move Rovert in any direction.
-     * @throws TransactionException 
+     * @throws RovertException
      */
     @PostMapping("/move/{direction}")
-    public ResponseEntity<Void> transactions(@PathVariable String direction) throws TransactionException {
+    public ResponseEntity<Void> transactions(@PathVariable String direction) throws RovertException {
         log.debug("REST request to move on direction : {}", direction);
         service.move(direction);
 	    return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -37,10 +37,10 @@ public class RovertResource {
     
     /**
      * POST  /stand stand still charging its batteries.
-     * @throws TransactionException
+     * @throws RovertException
      */
     @PostMapping("/stand")
-    public ResponseEntity<Void> stand() throws TransactionException {
+    public ResponseEntity<Void> stand() throws RovertException {
         log.debug("REST request to stand charging batteries");
         service.stand();
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -48,10 +48,10 @@ public class RovertResource {
     
     /**
      * POST  /transmit transmit texts in English.
-     * @throws TransactionException
+     * @throws RovertException
      */
     @PostMapping("/transmit")
-    public ResponseEntity<Void> transmit(@RequestBody RoverTransmitRequest request) throws TransactionException {
+    public ResponseEntity<Void> transmit(@RequestBody RoverTransmitRequest request) throws RovertException {
         log.debug("REST request to transmit text '{}' in English", request.getText());
         service.transmit(request.getText());
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -59,10 +59,10 @@ public class RovertResource {
 
     /**
      * GET /status Obtain general status.
-     * @throws TransactionException
+     * @throws RovertException
      */
     @GetMapping("/status")
-    public ResponseEntity<RovertResponse> status() throws TransactionException {
+    public ResponseEntity<RovertResponse> status() throws RovertException {
         log.debug("REST request to get status");
         RovertResponse response = service.status();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

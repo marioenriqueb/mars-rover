@@ -1,5 +1,7 @@
 package com.exercise.domain.enumeration;
 
+import com.exercise.exception.RovertException;
+
 import java.util.Arrays;
 
 /**
@@ -13,7 +15,7 @@ public enum Direction {
 
     private String code;
 
-    private Direction(String code) {
+    Direction(String code) {
         this.code = code;
     }
 
@@ -22,10 +24,10 @@ public enum Direction {
         return name().toLowerCase();
     }
 
-    public static Direction byCode(String code) {
+    public static Direction byCode(String code) throws RovertException {
         return Arrays.stream(Direction.values())
                 .filter(e -> e.code.equalsIgnoreCase(code))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(String.format("Unsupported type %s.", code)));
+                .orElseThrow(() -> new RovertException(String.format("Unsupported type %s.", code)));
     }
 }
