@@ -4,7 +4,6 @@ import com.excercise.BaseTest;
 import com.exercise.dao.RovertDao;
 import com.exercise.domain.enumeration.Direction;
 import com.exercise.exception.RovertException;
-import com.exercise.service.RovertService;
 import com.exercise.service.impl.RovertServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,7 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by mario on 26/04/2019.
