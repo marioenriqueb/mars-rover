@@ -6,7 +6,7 @@ import com.exercise.domain.enumeration.Direction;
 /**
  * Created by mario on 25/04/2019.
  */
-public class Movement extends Action {
+public class Movement implements Action {
 
     private Direction direction;
 

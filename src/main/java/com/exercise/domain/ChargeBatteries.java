@@ -5,7 +5,7 @@ import com.exercise.domain.enumeration.ActionType;
 /**
  * Created by mario on 25/04/2019.
  */
-public class ChargeBatteries extends Action {
+public class ChargeBatteries implements Action {
 
     @Override
     public ActionType type() {
