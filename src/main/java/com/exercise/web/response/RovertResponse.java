@@ -1,7 +1,5 @@
 package com.exercise.web.response;
 
-import java.util.Arrays;
-
 public class RovertResponse {
     private String status;
 

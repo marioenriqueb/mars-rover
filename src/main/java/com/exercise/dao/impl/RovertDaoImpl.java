@@ -1,16 +1,16 @@
 package com.exercise.dao.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import com.exercise.dao.RovertDao;
 import com.exercise.domain.Action;
 import com.exercise.domain.ChargeBatteries;
 import com.exercise.domain.Movement;
 import com.exercise.domain.Transmit;
 import com.exercise.domain.enumeration.Direction;
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class RovertDaoImpl implements RovertDao {

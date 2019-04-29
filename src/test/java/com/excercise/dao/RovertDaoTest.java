@@ -1,16 +1,13 @@
 package com.excercise.dao;
 
-import com.excercise.BaseTest;
-import com.exercise.Application;
-import com.exercise.dao.RovertDao;
-import com.exercise.dao.impl.RovertDaoImpl;
-import com.exercise.domain.enumeration.Direction;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+
+import com.excercise.BaseTest;
+import com.exercise.dao.RovertDao;
+import com.exercise.dao.impl.RovertDaoImpl;
+import com.exercise.domain.enumeration.Direction;
 
 public class RovertDaoTest extends BaseTest {
 
@@ -106,10 +103,10 @@ public class RovertDaoTest extends BaseTest {
 		String[] status = this.dao.status();
 
 		// After
-		Assert.assertEquals("R", this.dao.status()[0]);
-		Assert.assertEquals("[hola]", this.dao.status()[1]);
-		Assert.assertEquals("L", this.dao.status()[2]);
-		Assert.assertEquals("C", this.dao.status()[3]);
-		Assert.assertEquals("R", this.dao.status()[4]);
+		Assert.assertEquals("R", status[0]);
+		Assert.assertEquals("[hola]", status[1]);
+		Assert.assertEquals("L", status[2]);
+		Assert.assertEquals("C", status[3]);
+		Assert.assertEquals("R", status[4]);
 	}
 }
